@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         val myDataset = Datasource().loadAffirmations()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = ItemAdapter(this, myDataset)
+        // この設定により、パフォーマンスを向上させることができる
+        // コンテンツでRecyclerViewのレイアウトサイズを変更することはない
         recyclerView.setHasFixedSize(true)
     }
 }
